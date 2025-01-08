@@ -186,10 +186,18 @@ template {
   box-sizing: border-box;
 }
 
+/* Define Poppins Font */
+@font-face {
+  font-family: 'Poppins';
+  src: url($assets-poppins-regular-ttf) format('truetype');
+  font-weight: 400; /* Regular weight */
+  font-style: normal;
+}
+
 body {
+  font-family: 'Poppins', sans-serif;
   background-color: $background_color;
   color: $text_color;
-  font-family: $text_font;
   font-size: 15px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -206,7 +214,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $heading_font;
+  font-family: 'Poppins', sans-serif;
   margin-top: 0;
 }
 
@@ -943,34 +951,22 @@ ul {
 
 /***** Footer *****/
 .footer {
-  border-top: 1px solid #ddd;
-  margin-top: 60px;
-  padding: 30px 0;
+  text-align: center; /* Center all content in the footer */
+  font-size: 16px;
+  font-weight: 400;  
+  display: inline-block;
 }
-.footer a {
-  color: lighten($text_color, 20%);
-}
-.footer-inner {
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 0 5%;
+.footer-content {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center; 
+  padding: 20px 0; /* Add some spacing around the content */  
 }
 @media (min-width: 1160px) {
   .footer-inner {
     padding: 0;
     width: 90%;
   }
-}
-.footer-language-selector button {
-  color: lighten($text_color, 20%);
-  display: inline-block;
-}
-
-.powered-by-zendesk a,
-.powered-by-zendesk a:visited {
-  color: lighten($text_color, 20%);
 }
 
 /***** Breadcrumbs *****/
@@ -1001,7 +997,7 @@ ul {
 
 /***** Search field *****/
 .search-container {
-  position: relative;
+  position: relative; 
 }
 
 .search {
@@ -1010,22 +1006,22 @@ ul {
   border-style: solid;
   border-width: 1px;
   display: flex;
-  position: relative;
+  position: relative; 
   transition: border 0.12s ease-in-out;
 }
+
 .search:focus-within {
-  border-color: $brand_color;
+  border-color: $brand_color; 
 }
+
 .search input[type=search],
 .search .clear-button {
   background-color: #fff;
   border-radius: 30px;
-  border: none;
+  border: none; 
 }
-.search-full input[type=search], .search-full .clear-button {
-  border-color: #fff;
-}
-.search input[type=search] {
+
+.search input[type=search] { 
   appearance: none;
   -webkit-appearance: none;
   box-sizing: border-box;
@@ -1034,15 +1030,24 @@ ul {
   height: 40px;
   width: 100%;
 }
+
 .search input[type=search]:focus {
   color: #555;
 }
-.search input[type=search]::-webkit-search-decoration, .search input[type=search]::-webkit-search-cancel-button, .search input[type=search]::-webkit-search-results-button, .search input[type=search]::-webkit-search-results-decoration {
+
+.search input[type=search]::-webkit-search-decoration,
+.search input[type=search]::-webkit-search-cancel-button,
+.search input[type=search]::-webkit-search-results-button,
+.search input[type=search]::-webkit-search-results-decoration {
   -webkit-appearance: none;
 }
-.search input[type=search]:-webkit-autofill, .search input[type=search]:-webkit-autofill:hover, .search input[type=search]:-webkit-autofill:focus {
+
+.search input[type=search]:-webkit-autofill,
+.search input[type=search]:-webkit-autofill:hover,
+.search input[type=search]:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 1000px #fff inset;
 }
+
 .search .clear-button {
   align-items: center;
   box-sizing: border-box;
@@ -1053,75 +1058,108 @@ ul {
   justify-content: center;
   padding: 0 15px;
 }
+
 .search .clear-button:hover {
   background-color: $brand_color;
   color: #fff;
 }
+
 .search .clear-button:focus {
   outline: 0;
   box-shadow: 0 0 0 3px $brand_color;
 }
+
 .search-has-value .clear-button {
   display: flex;
 }
 
 [dir=ltr] .search input[type=search] {
-  padding-left: 40px;
+  padding-left: 40px; 
   padding-right: 20px;
 }
+
 [dir=ltr] .search-has-value input[type=search] {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
   border-right-color: transparent;
 }
+
 [dir=ltr] .search-has-value input[type=search]:focus {
   border-right-color: $brand_color;
 }
+
 [dir=ltr] .search .clear-button {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
   border-left-color: transparent;
 }
+
 [dir=ltr] .search .clear-button:focus {
   border-left-color: $brand_color;
 }
 
 [dir=rtl] .search input[type=search] {
   padding-left: 20px;
-  padding-right: 40px;
+  padding-right: 40px; 
 }
+
 [dir=rtl] .search-has-value input[type=search] {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
   border-left-color: transparent;
 }
+
 [dir=rtl] .search-has-value input[type=search]:focus {
   border-left-color: $brand_color;
 }
+
 [dir=rtl] .search .clear-button {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
   border-right-color: transparent;
 }
+
 [dir=rtl] .search .clear-button:focus {
   border-right-color: $brand_color;
 }
 
-.search-icon {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  position: absolute;
-  left: 15px;
-  z-index: 1;
+/* Search Icon (generated with ::before) */
+.search.search-full::before {
+  content: '';
+  display: block;
   width: 18px;
   height: 18px;
-  color: #777;
-  pointer-events: none;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  background-color: currentColor;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none; 
 }
-[dir=rtl] .search-icon {
-  left: auto;
-  right: 15px;
+
+/* Search Full */
+.search.search-full {
+  width: 80%; 
+  margin: auto;
+  display: block;
+  position: relative;
+}
+
+.search.search-full input[type="search"] {
+  padding-left: 40px; /* Add left padding to accommodate the icon */
+}
+
+/* accomodates space for Knowledge Space logo on homepage */
+.extra_space{
+  width: 80%; 
+  margin: 0 auto 600px auto;
+  display: block;
+  position: relative;
 }
 
 /***** Hero component *****/
@@ -1129,16 +1167,19 @@ ul {
   background-image: url($homepage_background_image);
   background-position: center;
   background-size: cover;
-  height: 300px;
-  padding: 0 20px;
+  padding: 80px 20px;       /* Add vertical space and maintain original height */
   text-align: center;
-  width: 100%;
+  width: 80%;              /* Set the hero image width to 80% */
+  margin: 0 auto;          /* Center the hero image horizontally */
+  min-height: 900px;       /* Keep minimum height for visual consistency */
+  border-radius: 10px;     /* Optional: Add rounded corners for a more polished look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
 }
 .hero-inner {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  max-width: 610px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -1196,31 +1237,70 @@ ul {
   flex-wrap: wrap;
   gap: 15px 30px;
   justify-content: space-between;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.article-sub-nav {
+  align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 15px 30px;
+  justify-content: space-between;
   margin-bottom: 55px;
 }
 @media (min-width: 768px) {
-  .sub-nav {
+  .article-sub-nav {
     flex-direction: row;
   }
 }
-.sub-nav .breadcrumbs {
+.article-sub-nav .breadcrumbs {
   margin: 0;
 }
-.sub-nav .search-container {
+.article-sub-nav .search-container {
   max-width: 300px;
   width: 100%;
 }
 @media (min-width: 768px) {
-  .sub-nav .search-container {
+  .article-sub-nav .search-container {
     flex: 0 1 300px;
   }
-}
-.sub-nav input[type=search]::after {
-  font-size: 15px;
-}
+  .top-image {
+    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+    justify-content: space-between;
+    margin-bottom: 55px;
+    background-image: url($assets-customer_support_banner-jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 150px; 
+    position: relative; /* To position the search bar within */
+  }
+  
+  .top-image .search-container {
+    position: absolute;
+    left: 600px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%; 
+  }
+  .top-image .container .page-header{
+    position: absolute;
+    right: 500px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%; 
+    }
 
 /***** Blocks *****/
 /* Used in Homepage#categories and Community#topics */
+.categories.blocks {
+  margin-top: 60px;  /* Spacing between the search content and categories */
+}
+
 .blocks-list {
   display: flex;
   flex-wrap: wrap;
@@ -1234,13 +1314,14 @@ ul {
   }
 }
 .blocks-item {
+  background-color: rgba(249, 244, 232, 0.8);  /* Set the background color to a transparent version of #F9F4E8 */
   border: 1px solid $brand_color;
-  border-radius: 4px;
+  border-radius: 10px;
   box-sizing: border-box;
   color: $brand_color;
   display: flex;
   flex: 1 0 340px;
-  margin: 0 0 30px;
+  margin: 15px;  /* Added margin to separate items */
   max-width: 100%;
   text-align: center;
 }
@@ -1363,12 +1444,17 @@ ul {
   text-align: center;
 }
 .community-image {
-  min-height: 300px;
-  margin-top: 32px;
-  background-image: url($community_image);
+  background-image: url($assets-community_man-jpg); /* Set the background image */
   background-position: center;
-  background-repeat: no-repeat;
-  max-width: 100%;
+  background-size: cover;
+  padding: 80px 20px;       /* Add vertical space and maintain original height */
+  text-align: center;
+  width: 60%;              /* Set the community-image width */
+  margin: 0 auto;          /* Center the community image horizontally */
+  min-height: 300px;       /* Ensure visual consistency with a minimum height */
+  border-radius: 10px;     /* Add rounded corners for a polished look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
 }
 .community a {
   color: $link_color;
@@ -1380,11 +1466,22 @@ ul {
 .community a:hover, .community a:active, .community a:focus {
   color: $hover_link_color;
 }
+.community-image:hover {
+  transform: scale(1.02); /* Slightly enlarge the image on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhance the shadow on hover */
+}
 
 .community,
 .activity {
   border-top: 1px solid #ddd;
   padding: 30px 0;
+}
+
+@media (max-width: 768px) {
+  .community-image {
+    width: 80%;           /* Adjust width for smaller screens */
+    padding: 60px 15px;   /* Reduce padding for smaller screens */
+  }
 }
 
 /***** Recent activity *****/
@@ -1610,7 +1707,7 @@ ul {
   .article {
     flex: 1 0 66%;
     max-width: 66%;
-    min-width: 640px;
+    min-width: 700px;
     padding: 0 30px;
   }
 }
