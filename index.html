@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zendesk Theme Test</title>
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+  <div class="tabs">
+    <ul class="tabs__list">
+      <li class="tabs__tab">
+        <a href="#walkthrough" class="tabs__link">Walkthrough</a>
+      </li>
+      <li class="tabs__tab">
+        <a href="#troubleshoot" class="tabs__link">Troubleshoot</a>
+      </li>
+    </ul>
+
+    <div class="tabs__content" id="walkthrough">
+      <p>Content for the Walkthrough tab goes here.</p>
+    </div>
+
+    <div class="tabs__content" id="troubleshoot">
+      <p>Content for the Troubleshoot tab goes here.</p>
+    </div>
+  </div>
+
+  <script src="garden.js"></script> 
+
+  <script>
+    // Initialize the tabs component after the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      if (document.querySelector('.tabs')) {
+        // Simulate ZAFClient resize (since you're not in Zendesk)
+        console.log("Tabs component initialized!"); 
+      }
+    });
+  </script>
+
+</body>
+</html>
