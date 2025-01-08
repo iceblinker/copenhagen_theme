@@ -4494,7 +4494,7 @@
     dom-helpers "^5.1.0"
     tabbable "^6.0.0"
 
-"@zendeskgarden/container-focusvisible@^2.0.0", "@zendeskgarden/container-focusvisible@^2.0.3":
+"@zendeskgarden/container-focusvisible@^2.0.3":
   version "2.0.3"
   resolved "https://registry.npmjs.org/@zendeskgarden/container-focusvisible/-/container-focusvisible-2.0.3.tgz"
   integrity sha512-uG/02EUaiViZHzNOo786dNacBTwkXZz7M13GzGnwTftkrLiKerYp45xtNJVdgdSlawwhnyohQ4s3Qkcg/3iqYg==
@@ -4527,7 +4527,7 @@
     "@zendeskgarden/container-focusjail" "^2.0.19"
     "@zendeskgarden/container-utilities" "^2.0.2"
 
-"@zendeskgarden/container-schedule@^2.0.0", "@zendeskgarden/container-schedule@^2.0.12":
+"@zendeskgarden/container-schedule@^2.0.12", "@zendeskgarden/container-schedule@^2.0.9":
   version "2.0.12"
   resolved "https://registry.npmjs.org/@zendeskgarden/container-schedule/-/container-schedule-2.0.12.tgz"
   integrity sha512-uz6mYGTQd9PQopBIQ3BY2fqFXBC1CCQacBiUOTemFWXZIDpzA7t3/iddLafevMvhknHF9G9X41llKT0jTiCwKA==
@@ -4622,13 +4622,13 @@
     prop-types "^15.5.7"
     react-merge-refs "^1.1.0"
 
-"@zendeskgarden/react-datepickers@^8.76.2":
-  version "8.76.2"
-  resolved "https://registry.npmjs.org/@zendeskgarden/react-datepickers/-/react-datepickers-8.76.2.tgz"
-  integrity sha512-FjJ/CjipiQ/7feFdkBFvlv5S9JqTMHQotSkbrZsKtupZsrNXNfjXmWwmrobMU9jquw7o76KhVODs2KIpjUBAbQ==
+"@zendeskgarden/react-datepickers@^8.76.9":
+  version "8.76.9"
+  resolved "https://registry.npmjs.org/@zendeskgarden/react-datepickers/-/react-datepickers-8.76.9.tgz"
+  integrity sha512-NDnj5Ea5V0MNZ3bRGIlDZkUFMNnLSyKGSFY5CjfbxCrngl9q4r7E0j/IS8Fp2NJQBzDU4ozWv1a3h9P54f7tgA==
   dependencies:
     "@zendeskgarden/container-utilities" "^2.0.0"
-    date-fns "^3.0.0"
+    date-fns "^3.6.0"
     prop-types "^15.5.7"
     react-popper "^1.3.4"
 
@@ -4662,19 +4662,19 @@
     prop-types "^15.5.7"
     react-merge-refs "^1.1.0"
 
-"@zendeskgarden/react-loaders@^8.76.2":
-  version "8.76.2"
-  resolved "https://registry.npmjs.org/@zendeskgarden/react-loaders/-/react-loaders-8.76.2.tgz"
-  integrity sha512-9o1lcVTSrhQC7rbPufqS5poBfUdGViPjT6hfaP0bHuwYMKi0Ap2NvETRrTReyhjKxKyh2WiOaPC392lRperg2g==
+"@zendeskgarden/react-loaders@^8.76.9":
+  version "8.76.9"
+  resolved "https://registry.npmjs.org/@zendeskgarden/react-loaders/-/react-loaders-8.76.9.tgz"
+  integrity sha512-d3MynQYkr48JbhUYJ+9ipwUcKB/FfYtGnicsVFq84kGzCY90oDRZs7xkZinrCEpsdSQcWC/VJrVPMF+DASp+dA==
   dependencies:
-    "@zendeskgarden/container-schedule" "^2.0.0"
-    polished "^4.0.0"
+    "@zendeskgarden/container-schedule" "^2.0.9"
+    polished "^4.3.1"
     prop-types "^15.5.7"
 
-"@zendeskgarden/react-modals@^8.76.8":
-  version "8.76.8"
-  resolved "https://registry.npmjs.org/@zendeskgarden/react-modals/-/react-modals-8.76.8.tgz"
-  integrity sha512-nH1ikPPXsOlOKuYKOshOkKQyfSnegvfHd5hwoH8voJqA/++uYhqNfyIuGXi3yZDmp5chJRfa0UV5mpotUYjArw==
+"@zendeskgarden/react-modals@^8.76.9":
+  version "8.76.9"
+  resolved "https://registry.npmjs.org/@zendeskgarden/react-modals/-/react-modals-8.76.9.tgz"
+  integrity sha512-z1B1i08KDxbbq/P0blRUc9HvTznjI60e6qJWOag+RErNabaLfO2bUo/XraIJk0b/Q858iRTymhCHLCC5F6gAHg==
   dependencies:
     "@popperjs/core" "^2.4.4"
     "@zendeskgarden/container-focusvisible" "^2.0.3"
@@ -4706,15 +4706,15 @@
     polished "^4.0.0"
     prop-types "^15.5.7"
 
-"@zendeskgarden/react-theming@^8.75.0", "@zendeskgarden/react-theming@^8.75.0 || ^9.0.0", "@zendeskgarden/react-theming@^8.76.2":
-  version "8.76.2"
-  resolved "https://registry.npmjs.org/@zendeskgarden/react-theming/-/react-theming-8.76.2.tgz"
-  integrity sha512-DScBE/qnVRJwjIh2YrTfLQiSjMV6HATfldOx8zgYM2O1fUS+1CCUN2/FsD4s5tBZPs89qHkPMDHk1bKlzgyzsA==
+"@zendeskgarden/react-theming@^8.75.0", "@zendeskgarden/react-theming@^8.75.0 || ^9.0.0", "@zendeskgarden/react-theming@^8.76.9":
+  version "8.76.9"
+  resolved "https://registry.npmjs.org/@zendeskgarden/react-theming/-/react-theming-8.76.9.tgz"
+  integrity sha512-EYSwaFn/Dkr6ufCkFlCY5c8rGYyHVwox55tTZ+tEKVr52nLdKcVuV5Vih3Qn4+wizElJ0j1J+o5bDmKrHBKXxQ==
   dependencies:
-    "@zendeskgarden/container-focusvisible" "^2.0.0"
+    "@zendeskgarden/container-focusvisible" "^2.0.3"
     "@zendeskgarden/container-utilities" "^2.0.0"
     lodash.memoize "^4.1.2"
-    polished "^4.0.0"
+    polished "^4.3.1"
     prop-types "^15.5.7"
 
 "@zendeskgarden/react-theming@^9.0.0":
@@ -7449,9 +7449,9 @@ cron-parser@^4.1.0, cron-parser@4.9.0:
     luxon "^3.2.1"
 
 cross-spawn@^7.0.0, cross-spawn@^7.0.2, cross-spawn@^7.0.3:
-  version "7.0.3"
-  resolved "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.3.tgz"
-  integrity sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==
+  version "7.0.6"
+  resolved "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.6.tgz"
+  integrity sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==
   dependencies:
     path-key "^3.1.0"
     shebang-command "^2.0.0"
@@ -7645,7 +7645,7 @@ date-fns@^2.29.3:
   dependencies:
     "@babel/runtime" "^7.21.0"
 
-date-fns@^3.0.0:
+date-fns@^3.6.0:
   version "3.6.0"
   resolved "https://registry.npmjs.org/date-fns/-/date-fns-3.6.0.tgz"
   integrity sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==
@@ -9257,9 +9257,9 @@ express-logging@1.1.1:
     on-headers "^1.0.0"
 
 express@^4.17.1:
-  version "4.21.1"
-  resolved "https://registry.npmjs.org/express/-/express-4.21.1.tgz"
-  integrity sha512-YSFlK1Ee0/GC8QaO91tHcDxJiE/X4FbpAyQWkxAvG6AXCuR65YzK8ua6D9hvi/TzUfZMpc+BwuM1IPw8fmQBiQ==
+  version "4.21.2"
+  resolved "https://registry.npmjs.org/express/-/express-4.21.2.tgz"
+  integrity sha512-28HqgMZAmih1Czt9ny7qr6ek2qddF4FclbMzwhCREB6OFfH+rXAnuNCwo1/wFvrtbgsQDb4kSbX9de9lFbrXnA==
   dependencies:
     accepts "~1.3.8"
     array-flatten "1.1.1"
@@ -9280,7 +9280,7 @@ express@^4.17.1:
     methods "~1.1.2"
     on-finished "2.4.1"
     parseurl "~1.3.3"
-    path-to-regexp "0.1.10"
+    path-to-regexp "0.1.12"
     proxy-addr "~2.0.7"
     qs "6.13.0"
     range-parser "~1.2.1"
@@ -14435,9 +14435,9 @@ nano-time@1.0.0:
     big-integer "^1.6.16"
 
 nanoid@^3.3.7:
-  version "3.3.7"
-  resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.3.7.tgz"
-  integrity sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==
+  version "3.3.8"
+  resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.3.8.tgz"
+  integrity sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w==
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -15854,6 +15854,11 @@ path-to-regexp@0.1.10:
   version "0.1.10"
   resolved "https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-0.1.10.tgz"
   integrity sha512-7lf7qcQidTku0Gu3YDPc8DJ1q7OOucfa/BSsIwjuh56VU7katFvuM8hULfkwB3Fns/rsVF7PwPKVw1sl5KQS9w==
+
+path-to-regexp@0.1.12:
+  version "0.1.12"
+  resolved "https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-0.1.12.tgz"
+  integrity sha512-RA1GjUVMnvYFxuqovrEqZoxxW5NUZqbwKtYz/Tt7nXerk0LbLblQmrsgdeOxV5SFHf0UDggjS/bSeOZwt1pmEQ==
 
 path-type@^4.0.0:
   version "4.0.0"
