@@ -6,36 +6,59 @@
 </head>
 <body>
 
-  <div class="tabs">
-    <ul class="tabs__list">
-      <li class="tabs__tab">
-        <a href="#walkthrough" class="tabs__link">Walkthrough</a>
-      </li>
-      <li class="tabs__tab">
-        <a href="#troubleshoot" class="tabs__link">Troubleshoot</a>
-      </li>
-    </ul>
-
-    <div class="tabs__content" id="walkthrough">
-      <p>Content for the Walkthrough tab goes here.</p>
-    </div>
-
-    <div class="tabs__content" id="troubleshoot">
-      <p>Content for the Troubleshoot tab goes here.</p>
+  <div class="container">
+    <header class="my-activities-header">
+      <h1 id="h_01JHK6GMZ1F547VQRVFB67T2NG">Title</h1>
+      <div>
+        <nav class="collapsible-nav collapsible-nav-border">
+          <button class="collapsible-nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false"> </button>
+          <ul class="collapsible-nav-list">
+            <li class="current">TAB 1</li>
+            <li>TAB 2</li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="tabs">
+      <ul class="tab-list">
+        <li class="tab" aria-selected="true">TAB 1</li>
+        <li class="tab">TAB 2</li>
+      </ul>
+      <div class="tab-panel">
+        <div id="content-1">Content 1</div>
+      </div>
+      <div class="tab-panel">
+        <div id="content-2">Content 2</div>
+      </div>
     </div>
   </div>
-
-  <script src="garden.js"></script> 
-
-  <script>
-    // Initialize the tabs component after the DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', function() {
-      if (document.querySelector('.tabs')) {
-        // Simulate ZAFClient resize (since you're not in Zendesk)
-        console.log("Tabs component initialized!"); 
-      }
-    });
-  </script>
+  
+    <script>
+      // Get the tab elements
+      const tabs = document.querySelectorAll('.tab-list tab');
+      // Get the tab panel elements
+      const tabPanels = document.querySelectorAll('.tab-panel');
+  
+      // Add a click event listener to each tab
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // Remove the 'aria-selected' attribute from the currently active tab
+          document.querySelector('.tab-list tab[aria-selected="true"]').removeAttribute('aria-selected');
+          // Add the 'aria-selected' attribute to the clicked tab
+          tab.setAttribute('aria-selected', 'true');
+  
+          // Hide all tab panels
+          tabPanels.forEach(panel => panel.setAttribute('aria-hidden', 'true'));
+  
+          // Show the corresponding tab panel
+          const targetPanelId = tab.textContent.toLowerCase().replace(/\s+/g, '-'); // Generate the ID of the target panel
+          const targetPanel = document.getElementById(`content-${targetPanelId}`);
+          if (targetPanel) {
+            targetPanel.parentNode.removeAttribute('aria-hidden');
+          }
+        });
+      });
+    </script>
 
 </body>
 </html>

@@ -659,3 +659,29 @@
   });
 
 })();
+
+document.addEventListener('DOMContentLoaded', function () {
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.tab-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Deselect all tabs
+      tabs.forEach(t => {
+        t.setAttribute('aria-selected', 'false');
+        t.setAttribute('tabindex', '-1');
+      });
+
+      // Hide all panels
+      panels.forEach(panel => panel.setAttribute('hidden', ''));
+
+      // Select clicked tab
+      tab.setAttribute('aria-selected', 'true');
+      tab.setAttribute('tabindex', '0');
+
+      // Show the corresponding panel
+      const targetPanel = document.getElementById(tab.getAttribute('data-target'));
+      targetPanel.removeAttribute('hidden');
+    });
+  });
+});
