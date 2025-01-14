@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="sub-nav">
+  <nav class="sub-nav">
   {{breadcrumbs}} 
-  </div></div>
+  </nav></div>
 
 <div class="top-image">
   <div class="container">
@@ -13,11 +13,11 @@
         {{#if section.description}}
           <p class="page-header-description">{{section.description}}</p>
         {{/if}}
-      </header>
-    <div class="search-container">
+      
+     <div class="search-container">
     <h2 class="visibility-hidden">{{ t 'search' }}</h2>
-    {{search submit=false instant=settings.instant_search class='search search-full'}}
-    </div>
+    {{search scoped=settings.scoped_kb_search submit=false class='search search-scoped'}}
+    </div></header>
   </div>
 </div>
 <div class="container">
