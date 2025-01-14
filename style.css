@@ -1,13 +1,32 @@
 @charset "UTF-8";
 /***** Normalize.css *****/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+@charset "UTF-8";
+
+/* Resets global style */
+* {
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
 html {
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
+  line-height: 1.15; /* Correct line height in all browsers */
+  -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS */
 }
 
 body {
-  margin: 0;
+  margin: 0; /* Remove default margin */
+  font-family: 'Poppins', sans-serif; /* Set default font to Poppins */
+  background-color: $background_color; /* Set default background color using a variable */
+  color: $text_color; /* Set default text color using a variable */
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; /* Smoother font rendering on OS X */
+}
+
+@media (min-width: 1024px) {
+  body > main {
+    min-height: 65vh; /* Ensure main content takes up at least 65% of the viewport height on larger screens */
+  }
 }
 
 main {
@@ -193,7 +212,6 @@ template {
   font-weight: 400; /* Regular weight */
   font-style: normal;
 }
-
 body {
   font-family: 'Poppins', sans-serif;
   background-color: $background_color;
@@ -208,12 +226,7 @@ body {
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
   margin-top: 0;
 }
@@ -301,6 +314,7 @@ a:hover, a:active, a:focus {
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 5%;
+  
 }
 @media (min-width: 1160px) {
   .container {
@@ -955,6 +969,9 @@ ul {
   font-size: 16px;
   font-weight: 400;  
   display: inline-block;
+  padding: 30px 0;
+  margin-top: 60px;
+  
 }
 .footer-content {
   display: flex;
@@ -968,6 +985,7 @@ ul {
     width: 90%;
   }
 }
+
 
 /***** Breadcrumbs *****/
 .breadcrumbs {
@@ -1154,6 +1172,33 @@ ul {
   padding-left: 40px; /* Add left padding to accommodate the icon */
 }
 
+.search-scoped { /* New class for scoped search */
+  /* ... your desired styles for this search bar ... */
+  position: relative; /* Required for positioning the icon */
+}
+
+.search-scoped::before { /* Style for the search icon */
+  content: '';
+  display: block;
+  width: 18px;
+  height: 18px;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  background-color: currentColor;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none; 
+}
+
+.search-scoped input[type="search"] {
+  padding-left: 40px; /* Add left padding to accommodate the icon */
+}
+
 /* accomodates space for Knowledge Space logo on homepage */
 .extra_space{
   width: 80%; 
@@ -1162,18 +1207,29 @@ ul {
   position: relative;
 }
 
+.hero-inner .search-scoped {
+  width: 60%; /* Adjust this value as needed - search filed size on home-page*/
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .hero-inner .search-scoped {
+    width: 60%; 
+  }
+}
+
 /***** Hero component *****/
 .hero {
   background-image: url($homepage_background_image);
   background-position: center;
   background-size: cover;
-  padding: 80px 20px;       /* Add vertical space and maintain original height */
+  padding: 80px 60px;       /* Add vertical space and maintain original height */
   text-align: center;
-  width: 80%;              /* Set the hero image width to 80% */
-  margin: 0 auto;          /* Center the hero image horizontally */
+  width: 90%;              /* Set the hero image width to 80% */
+  margin: 10px auto;          /* Center the hero image horizontally */
   min-height: 900px;       /* Keep minimum height for visual consistency */
   border-radius: 10px;     /* Optional: Add rounded corners for a more polished look */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+  margin-top: 30px;
 }
 .hero-inner {
   position: relative;
@@ -1265,35 +1321,36 @@ ul {
   .article-sub-nav .search-container {
     flex: 0 1 300px;
   }
-  .top-image {
-    align-items: baseline;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 15px 30px;
-    justify-content: space-between;
-    margin-bottom: 55px;
-    background-image: url($assets-customer_support_banner-jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 150px; 
-    position: relative; /* To position the search bar within */
+.top-image {
+  align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 15px 30px;
+  justify-content: space-between;
+  margin-bottom: 55px;
+  background-image: url($assets-customer_support_banner-jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 150px; 
+  position: relative; /* To position the search bar within */
+}
+
+.top-image .search-container {
+  position: absolute;
+  left: 550px; /* Adjust as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 75%; /* width of search field in Category and Section pages */
+}
+.top-image .container .page-header{
+  position: absolute;
+  right: 500px; /* Adjust as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40%; 
   }
-  
-  .top-image .search-container {
-    position: absolute;
-    left: 600px; /* Adjust as needed */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40%; 
-  }
-  .top-image .container .page-header{
-    position: absolute;
-    right: 500px; /* Adjust as needed */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40%; 
-    }
+
 
 /***** Blocks *****/
 /* Used in Homepage#categories and Community#topics */
@@ -1304,8 +1361,7 @@ ul {
 .blocks-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  list-style: none;
+  justify-content: center;  /* Center the blocks within the hero */
   padding: 0;
 }
 @media (min-width: 768px) {
@@ -1444,7 +1500,7 @@ ul {
   text-align: center;
 }
 .community-image {
-  background-image: url($assets-community_man-jpg); /* Set the background image */
+  background-image: url($community_image); /* Set the background image */
   background-position: center;
   background-size: cover;
   padding: 80px 20px;       /* Add vertical space and maintain original height */
@@ -1591,7 +1647,9 @@ ul {
 /***** Category pages *****/
 .category-container {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;  
 }
 .category-content {
   flex: 1;
@@ -1603,49 +1661,6 @@ ul {
   }
 }
 
-.section-tree {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-@media (min-width: 768px) {
-  .section-tree {
-    flex-direction: row;
-  }
-}
-.section-tree .section {
-  flex: initial;
-  max-width: 100%;
-}
-@media (min-width: 768px) {
-  .section-tree .section {
-    flex: 0 0 45%; /* Two columns for tablet and desktop. Leaving 5% separation between columns */
-  }
-}
-.section-tree-title {
-  margin-bottom: 0;
-  font-size: 18px;
-  font-weight: 600;
-}
-.section-tree-title a {
-  color: $text_color;
-}
-.section-tree .see-all-articles {
-  display: block;
-  padding: 15px 0;
-}
-
-.article-list-item {
-  font-size: 16px;
-  padding: 15px 0;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.article-list-item a {
-  color: $text_color;
-}
-
 .icon-star {
   color: $brand_color;
   font-size: 18px;
@@ -1655,6 +1670,12 @@ ul {
 .section-container {
   display: flex;
   justify-content: flex-end;
+  border: 1px solid #dcdcdc; /* Light gray border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Optional: Add padding inside the container */  
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  margin-bottom: 40px;
+}
 }
 .section-content {
   flex: 1;
@@ -4816,3 +4837,49 @@ zd-summary-block {
 [dir=rtl] zd-summary-block {
   border-right-color: #859fa1;
 }
+
+/* Search field within My Requests */
+.requests-table-toolbar .search {
+  border-color: #87929D;
+  border-radius: 30px;
+  border-style: solid;
+  border-width: 1px;
+  display: flex;
+  position: relative;
+  transition: border 0.12s ease-in-out;
+  box-sizing: border-box;
+}
+
+.requests-table-toolbar .search input[type=search] {
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  color: #666;
+  flex: 1 1 auto;
+  height: 40px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 40px; /* Adjusted padding */
+  background-color: #fff; /* Added for consistency */
+  border: none; /* Added for consistency */
+  border-radius: 30px; /* Added for consistency */
+}
+
+.requests-table-toolbar .search input[type=search]:focus {
+  color: #555;
+  border-color: $brand_color; /* Added for focus state */
+}
+
+.requests-table-toolbar .search svg { /* Style for the search icon */
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  width: 18px; /* Adjust size as needed */
+  height: 18px; /* Adjust size as needed */
+}
+
