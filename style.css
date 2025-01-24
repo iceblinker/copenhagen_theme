@@ -484,55 +484,45 @@ ul {
 }
 
 /***** Tables *****/
-.table {
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
-  border-spacing: 0;
+table {
+  width: 100%; 
+  table-layout: fixed; /* Initial layout for smaller screens */
+  margin: 0 auto; /* Center the table */
+  border-collapse: collapse; /* Collapse borders for single lines */
+  border-style: hidden; /* Hide outer table border */
+  border-spacing: 0; /* Remove spacing between cells */
 }
+
+table td, 
+table th {
+  padding: 0.5rem; /* Base padding for cells */
+  border: 1px solid rgb(242, 124, 79); /* Apply border to all cells */
+}
+
+/* Media Queries for Responsiveness */
 @media (min-width: 768px) {
-  .table {
-    table-layout: auto;
+  table {
+    table-layout: auto; /* Switch to automatic layout for larger screens */
   }
-}
-.table th,
-.table th a {
-  color: lighten($text_color, 20%);
-  font-size: 13px;
-  text-align: left;
-}
-[dir=rtl] .table th,
-[dir=rtl] .table th a {
-  text-align: right;
-}
-.table tr {
-  border-bottom: 1px solid #ddd;
-  display: block;
-  padding: 20px 0;
-}
-@media (min-width: 768px) {
-  .table tr {
-    display: table-row;
-  }
-}
-.table td {
-  display: block;
-}
-@media (min-width: 768px) {
-  .table td {
-    display: table-cell;
-  }
-}
-@media (min-width: 1024px) {
-  .table td, .table th {
-    padding: 20px 30px;
-  }
-}
-@media (min-width: 768px) {
-  .table td, .table th {
-    padding: 10px 20px;
+
+  table td, 
+  table th {
+    padding: 10px 20px; 
     height: 60px;
   }
+}
+
+@media (min-width: 1024px) {
+  table td, 
+  table th {
+    padding: 20px 30px; 
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] table th, 
+[dir="rtl"] table th a {
+  text-align: right;
 }
 
 /***** Forms *****/
