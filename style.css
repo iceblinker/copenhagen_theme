@@ -484,7 +484,7 @@ ul {
 }
 
 /***** Tables *****/
-table {
+.table {
   width: 100%; 
   table-layout: fixed; /* Initial layout for smaller screens */
   margin: 0 auto; /* Center the table */
@@ -493,35 +493,35 @@ table {
   border-spacing: 0; /* Remove spacing between cells */
 }
 
-table td, 
-table th {
+.table td, 
+.table th {
   padding: 0.5rem; /* Base padding for cells */
   border: 1px solid rgb(242, 124, 79); /* Apply border to all cells */
 }
 
 /* Media Queries for Responsiveness */
 @media (min-width: 768px) {
-  table {
+  .table {
     table-layout: auto; /* Switch to automatic layout for larger screens */
   }
 
-  table td, 
-  table th {
+  .table td, 
+  .table th {
     padding: 10px 20px; 
     height: 60px;
   }
 }
 
 @media (min-width: 1024px) {
-  table td, 
-  table th {
+  .table td, 
+  .table th {
     padding: 20px 30px; 
   }
 }
 
 /* RTL Support */
-[dir="rtl"] table th, 
-[dir="rtl"] table th a {
+[dir="rtl"] .table th, 
+[dir="rtl"] .table th a {
   text-align: right;
 }
 
