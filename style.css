@@ -1258,7 +1258,7 @@ ul {
 .page-header .section-subscribe {
   flex-shrink: 0;
   margin-bottom: 10px;
-}
+  }
 @media (min-width: 768px) {
   .page-header .section-subscribe {
     margin-bottom: 0;
@@ -3045,6 +3045,11 @@ ul {
 .profile-info .community-badge-achievements-rest {
   line-height: 40px;
   font-size: 20px;
+}
+
+/* blank ol list */
+.blank-list {
+  list-style-type: none;
 }
 
 /* Navigation element that collapses on mobile */
@@ -4883,30 +4888,56 @@ zd-summary-block {
   height: 18px; /* Adjust size as needed */
 }
 
-.tab-list {
+/***** Tabs *****/
+.tabs .tab-list {
   display: flex;
-  list-style: none;
-  padding: 0;
+  list-style: none; /* Remove bullet points */
   margin: 0;
-  border-bottom: 2px solid #ccc;
+  padding: 0;
 }
 
-.tab {
-  padding: 10px 20px;
+.tabs .tab {
+  padding: 10px 15px;  /* Add some space around the text */
+  border-bottom: 2px solid transparent; /* Add a transparent border for spacing */
   cursor: pointer;
-  border: 1px solid #ccc;
-  border-bottom: none;
-  background: #f9f9f9;
 }
 
-.tab[aria-selected="true"] {
-  background: white;
-  font-weight: bold;
-  border-top: 2px solid #4caf50;
+.tabs .tab:hover {
+  border-bottom: 2px solid #ccc; /* Change border color on hover */
 }
 
-.tab-panel {
-  padding: 20px;
-  border: 1px solid #ccc;
-  background: #fff;
+.tabs .tab[aria-selected="true"] {
+  border-bottom: 2px solid #F27C4F;; /* Style the selected tab */
 }
+
+.tabs .tab-panel {
+  margin-top: 20px; /* Add some space between tabs and content */
+}
+
+/***** Accordion *****/
+  .accordion section {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+
+  .accordion header button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    text-align: left;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .accordion header button[aria-expanded="true"] {
+    font-weight: normal;
+    color: #F27C4F;
+    border-bottom: 2px solid #F27C4F;
+  }
+
+  .accordion div[role="region"] {
+    padding: 10px;
+    background: transparent;
+  }
+

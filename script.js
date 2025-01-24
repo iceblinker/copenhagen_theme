@@ -660,8 +660,9 @@
 
 })();
 
+//Tabs
 document.addEventListener('DOMContentLoaded', function () {
-  const tabs = document.querySelectorAll('.tab');
+  const tabs = document.querySelectorAll('.tab-list .tab');
   const panels = document.querySelectorAll('.tab-panel');
 
   tabs.forEach(tab => {
@@ -670,6 +671,7 @@ document.addEventListener('DOMContentLoaded', function () {
       tabs.forEach(t => {
         t.setAttribute('aria-selected', 'false');
         t.setAttribute('tabindex', '-1');
+        t.classList.remove('current');
       });
 
       // Hide all panels
@@ -678,6 +680,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Select clicked tab
       tab.setAttribute('aria-selected', 'true');
       tab.setAttribute('tabindex', '0');
+      tab.classList.add('current');
 
       // Show the corresponding panel
       const targetPanel = document.getElementById(tab.getAttribute('data-target'));
@@ -685,3 +688,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+//Accordion
+  document.addEventListener('DOMContentLoaded', function () {
+    const accordions = document.querySelectorAll('.accordion button');
+
+    accordions.forEach(accordion => {
+      accordion.addEventListener('click', () => {
+        const expanded = accordion.getAttribute('aria-expanded') === 'true';
+        const contentId = accordion.getAttribute('aria-controls');
+        const content = document.getElementById(contentId);
+
+        // Close all accordions
+        document.querySelectorAll('.accordion button').forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+        document.querySelectorAll('.accordion div[role="region"]').forEach(region => region.setAttribute('hidden', ''));
+
+        // Open the clicked accordion if it was not already open
+        if (!expanded) {
+          accordion.setAttribute('aria-expanded', 'true');
+          content.removeAttribute('hidden');
+        }
+      });
+    });
+  });

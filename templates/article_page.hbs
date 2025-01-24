@@ -1,13 +1,12 @@
-<div class="container-divider"></div>
+
 <div class="container">
-  <div class="article-sub-nav">
+  <nav class="article-sub-nav">
     {{breadcrumbs}}
-    <div class="search-container">
-       <h2 class="visibility-hidden">{{ t 'search' }}</h2>    
-    {{search submit=false instant=settings.instant_search class='search search-full'}}
-    </div>
-    
-  </div>
+     <div class="search-container">
+    <h2 class="visibility-hidden">{{ t 'search' }}</h2>
+    {{search scoped=settings.scoped_kb_search submit=false class='search search-scoped'}}
+    </div>    
+  </nav>
 
   <div class="article-container" id="article-container">
     <aside class="article-sidebar" aria-labelledby="section-articles-title">
